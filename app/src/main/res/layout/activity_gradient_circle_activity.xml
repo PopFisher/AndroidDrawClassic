@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_draw_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="popfisher.androiddrawclassic.DrawMainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/gradient_circle_1"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="#FFFF553E"
+            android:padding="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_circle" />
+
+        <popfisher.androiddrawclassic.GradientCircle
+            android:id="@+id/gradient_circle_2"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_below="@id/gradient_circle_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="#FF0F7EFA" />
+    </LinearLayout>
+
+</ScrollView>

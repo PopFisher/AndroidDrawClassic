@@ -1,0 +1,106 @@
+package popfisher.androiddrawclassic;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.util.AttributeSet;
+import android.view.View;
+
+/**
+ * Created by popfisher on 2016/12/5.
+ * 绘制带渐变填充颜色的椭圆（园）
+ */
+
+public class GradientCircle extends View {
+
+    private Paint mPaintGradientCircle;
+    private RectF mRectF;
+    private LinearGradient mLinearGradient;
+    private static final int mStrokeColor = 0x80e4e4e4;
+
+    private int mFillColors[] = new int[]{ 0x73ffffff, 0x5effffff, 0x5effffff, 0x80ffffff, 0x99ffffff, 0xe6ffffff };
+
+
+    public GradientCircle(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (mPaintGradientCircle == null) {
+            init();
+        }
+        // 同样的颜色数组mFillColors，下面两种方式的渐变效果不一样
+        drawDirect(canvas);
+//        drawWithBitmap(canvas);
+    }
+
+    /**
+     * 直接绘制，推荐使用这种方式，节约内存，不用缓存bitmap对象
+     * @param canvas
+     */
+    private void drawDirect(Canvas canvas) {
+        mPaintGradientCircle.setStyle(Paint.Style.STROKE);
+        mPaintGradientCircle.setStrokeWidth(1);
+        mPaintGradientCircle.setColor(mStrokeColor);
+        mPaintGradientCircle.setShader(null);
+        canvas.drawOval(mRectF, mPaintGradientCircle);
+        // 画圆可以用下面的方法
+        // canvas.drawCircle(mRectF.centerX(), mRectF.centerY(), mRectF.width() / 2, mPaintGradientCircle);
+
+        mPaintGradientCircle.setStyle(Paint.Style.FILL);
+        mPaintGradientCircle.setShader(mLinearGradient);
+        canvas.drawOval(mRectF, mPaintGradientCircle);
+        // 画圆可以用下面的方法
+        // canvas.drawCircle(mRectF.centerX(), mRectF.centerY(), mRectF.width() / 2, mPaintGradientCircle);
+    }
+
+    /**
+     * 先创建出一个渐变的Bitmap，然后绘制bitmap，除非特殊场景一定要使用到Bitmap对象，否则不用这种方式
+     * @param canvas
+     */
+    private void drawWithBitmap(Canvas canvas) {
+        canvas.drawBitmap(createGradientBitmap((int) mRectF.width(), (int) mRectF.height()), null, mRectF, mPaintGradientCircle);
+    }
+
+    private void init() {
+        mPaintGradientCircle = new Paint();
+        mPaintGradientCircle.setAntiAlias(true);
+        final int padding = 50;
+        mRectF = new RectF(padding, padding, getWidth() - padding, getHeight() - padding);
+        mLinearGradient = new LinearGradient(mRectF.centerX(), mRectF.top, mRectF.centerX(), mRectF.bottom, mFillColors, null, Shader.TileMode.MIRROR);
+    }
+
+    private Bitmap drawableToBitamp(Drawable drawable, int w, int h) {
+        Bitmap.Config config =
+                drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
+                        : Bitmap.Config.RGB_565;
+        Bitmap bitmap = Bitmap.createBitmap(w, h, config);
+        //注意，下面三行代码要用到，否在在View或者surfaceview里的canvas.drawBitmap会看不到图
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, w, h);
+        drawable.draw(canvas);
+        return bitmap;
+    }
+
+    private Bitmap createGradientBitmap(int buttonBmpWidth, int buttonBmpHeight) {
+        return drawableToBitamp(createGradientDrawable(), buttonBmpWidth, buttonBmpHeight);
+    }
+
+    private GradientDrawable createGradientDrawable() {
+        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, mFillColors);
+        gradientDrawable.setGradientType(GradientDrawable.LINEAR_GRADIENT);
+        gradientDrawable.setShape(GradientDrawable.OVAL);
+        gradientDrawable.setUseLevel(false);
+        gradientDrawable.setStroke(1, mStrokeColor);
+        return gradientDrawable;
+    }
+}

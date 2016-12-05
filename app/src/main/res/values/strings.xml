@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidDrawClassic</string>
+    <string name="second_order_bezier_curve">二阶贝塞尔曲线</string>
+    <string name="gradient_fill_circle">渐变圆形（内部填充颜色）</string>
+</resources>
