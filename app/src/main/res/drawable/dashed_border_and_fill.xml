@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 虚线边框 -->
+<!-- 虚线边框+内部填充 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle"
     android:useLevel="false">
@@ -9,5 +9,7 @@
         android:color="#ffff0000"
         android:dashGap="3dp"
         android:dashWidth="5dp" />
+
+    <solid android:color="#ff00ffff" />
 
 </shape>

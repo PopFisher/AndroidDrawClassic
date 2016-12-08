@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/phone_frame" />
+    <item android:drawable="@drawable/icon_power_battery_horizonl" />
+</layer-list>
