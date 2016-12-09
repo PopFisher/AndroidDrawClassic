@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 圆形 -->
+<!-- 矩形边框 + 填充-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval"
-    android:useLevel="false">
+    android:shape="rectangle"
+    android:useLevel="true">
 
-    <size
-        android:width="20dp"
-        android:height="20dp" />
     <stroke
         android:width="2dp"
         android:color="#ffff0000" />
 
+    <solid android:color="#800000ff" />
 </shape>

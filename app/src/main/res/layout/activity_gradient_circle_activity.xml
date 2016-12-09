@@ -20,7 +20,7 @@
             android:background="#FFFF553E"
             android:padding="20dp"
             android:scaleType="fitXY"
-            android:src="@drawable/gradient_circle_linear" />
+            android:src="@drawable/circle_gradient_linear" />
 
         <popfisher.androiddrawclassic.circle.GradientCircleView
             android:id="@+id/gradient_circle_2"

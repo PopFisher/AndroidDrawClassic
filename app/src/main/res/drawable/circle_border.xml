@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 矩形-->
+<!-- 圆形边框 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle"
-    android:useLevel="false">
+    android:shape="oval"
+    android:useLevel="true">
+
+    <size
+        android:width="20dp"
+        android:height="20dp" />
 
     <stroke
         android:width="2dp"

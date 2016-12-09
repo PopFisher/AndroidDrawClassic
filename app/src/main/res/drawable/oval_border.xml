@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 实线边 -->
+<!-- 椭圆边框 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="line"
-    android:useLevel="false">
+    android:shape="oval"
+    android:useLevel="true">
 
     <stroke
-        android:width="5dp"
+        android:width="2dp"
         android:color="#ffff0000" />
 
 </shape>

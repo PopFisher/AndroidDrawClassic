@@ -2,7 +2,7 @@
 <!-- 实线边 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="line"
-    android:useLevel="false">
+    android:useLevel="true">
 
     <stroke
         android:width="2dp"
