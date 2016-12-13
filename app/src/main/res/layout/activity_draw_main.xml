@@ -10,6 +10,12 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/android_sys_shape_xml"
+            style="@style/button_style_white_bg"
+            android:text="@string/android_shape_xml"/>
+
         <Button
             android:id="@+id/second_order_bezier_curve"
             style="@style/button_style_white_bg"
