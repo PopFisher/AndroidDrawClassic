@@ -2,7 +2,8 @@
 <!-- 圆环-线性渐变 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="ring"
-    android:useLevel="true">
+    android:useLevel="false">
+    <!--android:useLevel="false"必须是false-->
 
     <size
         android:width="@dimen/shape_size"

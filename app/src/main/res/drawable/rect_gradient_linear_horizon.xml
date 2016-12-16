@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 矩形内部填充-径向渐变,一般不用在rect上 -->
+<!-- 矩形内部填充-线性水平渐变 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle"
     android:useLevel="true">
@@ -12,13 +12,13 @@
         android:width="1px"
         android:color="#ffff00ff" />
 
-    <!-- 径向渐变angle无效 -->
+    <!-- 调整angle实现水平渐变，垂直渐变或者对角渐变 -->
     <gradient
         android:angle="0"
         android:centerX="0.5"
         android:centerY="0.5"
+        android:centerColor="#2000ff00"
+        android:endColor="#8000ff00"
         android:startColor="#0000ff00"
-        android:endColor="#ff00ff00"
-        android:gradientRadius="40dp"
-        android:type="radial" />
+        android:type="linear" />
 </shape>

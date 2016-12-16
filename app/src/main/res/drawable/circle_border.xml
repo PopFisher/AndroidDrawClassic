@@ -5,8 +5,8 @@
     android:useLevel="true">
 
     <size
-        android:width="20dp"
-        android:height="20dp" />
+        android:width="40dp"
+        android:height="40dp" />
 
     <stroke
         android:width="2dp"
