@@ -8,11 +8,12 @@
         android:width="50dp"
         android:height="10dp" />
 
+    <stroke android:color="#ffff0000"
+        android:width="2dp"/>
+
     <solid android:color="#8000ff00" />
 
     <!-- 圆角半径是高度的一般就是一个圆弧了 -->
-    <corners
-        android:bottomLeftRadius="20dp"
-        android:topLeftRadius="20dp" />
+    <corners android:radius="20dp" />
 
 </shape>

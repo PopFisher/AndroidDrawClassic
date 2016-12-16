@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,12 +19,131 @@
             android:gravity="center"
             android:text="实线" />
 
-        <View
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/line_dashed"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layerType="software"
+            android:text="虚线" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rect_solid_border"
+            android:gravity="center"
+            android:text="矩形实线边框-内部无填充" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_dashed_border"
+            android:gravity="center"
+            android:text="矩形虚线边框-内部无填充"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_solid_border_and_fill"
+            android:gravity="center"
+            android:text="矩形实线边框-内部填充" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_dashed_border_and_fill"
+            android:gravity="center"
+            android:text="矩形虚线边框-内部填充" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rect_rounded_border"
+            android:gravity="center"
+            android:text="圆角矩形-只有边框" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_rounded_fill"
+            android:gravity="center"
+            android:text="圆角矩形-只有内部填充" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_rounded_border_and_fill"
+            android:gravity="center"
+            android:text="圆角矩形-有边框有填充" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_rounded_left_arc"
+            android:gravity="center"
+            android:text="圆角矩形-左边圆角为一个半圆弧" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_rounded_left_right_arc"
+            android:gravity="center"
+            android:text="圆角矩形-左右两边都是半圆弧" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_rounded_left_right_arc_border"
+            android:gravity="center"
+            android:text="圆角矩形-左右两边都是半圆弧-带边框" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rect_rounded_arc"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="圆角矩形-圆" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/rect_rounded_top_bottom_arc"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="圆角矩形-上下两边半圆弧" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
