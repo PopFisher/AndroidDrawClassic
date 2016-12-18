@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><!-- 圆环 -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 圆环-仅有边框 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:innerRadiusRatio="4"
+    android:innerRadius="20dp"
     android:shape="ring"
-    android:thickness="5dp"
+    android:thickness="16dp"
     android:useLevel="false">
     <!--android:useLevel="false"必须是false-->
 
     <size
-        android:width="40dp"
-        android:height="40dp" />
-
-
-    <solid android:color="#ffff0000" />
+        android:width="80dp"
+        android:height="80dp" />
 
     <stroke
-        android:width="1dp"
+        android:width="2dp"
         android:color="#ffff00ff" />
 </shape>

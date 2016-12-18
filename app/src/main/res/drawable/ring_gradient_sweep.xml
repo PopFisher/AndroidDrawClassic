@@ -2,19 +2,17 @@
 <!-- 圆环-线性渐变 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="ring"
+    android:innerRadius="10dp"
+    android:thickness="30dp"
     android:useLevel="false">
     <!--android:useLevel="false"必须是false-->
 
     <size
-        android:width="@dimen/shape_size"
-        android:height="@dimen/shape_size" />
+        android:width="80dp"
+        android:height="80dp" />
 
-    <stroke
-        android:width="1dp"
-        android:color="#ffff00ff" />
-
+    <!--扫描渐变shape不能设置角度-->
     <gradient
-        android:angle="-90"
         android:centerColor="#80ff0000"
         android:endColor="#ffff0000"
         android:startColor="#00ff0000"

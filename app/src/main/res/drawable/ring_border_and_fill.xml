@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 圆环-线性渐变 -->
+<!-- 圆环 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadius="20dp"
     android:shape="ring"
-    android:innerRadius="10dp"
-    android:thickness="30dp"
+    android:thickness="16dp"
     android:useLevel="false">
     <!--android:useLevel="false"必须是false-->
 
@@ -11,11 +11,9 @@
         android:width="80dp"
         android:height="80dp" />
 
-    <gradient
-        android:angle="45"
-        android:centerColor="#80ff0000"
-        android:endColor="#ffff0000"
-        android:startColor="#00ff0000"
-        android:type="linear" />
+    <solid android:color="#80ff0000" />
 
+    <stroke
+        android:width="2dp"
+        android:color="#ffff00ff" />
 </shape>
