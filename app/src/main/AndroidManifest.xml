@@ -19,6 +19,7 @@
         <activity android:name=".BezierCurveActivity" />
         <activity android:name=".GradientCircleActivity" />
         <activity android:name=".XmlShapeActivity" />
+        <activity android:name=".XmlDrawableActivity" />
     </application>
 
 </manifest>

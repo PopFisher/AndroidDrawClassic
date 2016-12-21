@@ -609,7 +609,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="圆环边框+填充" />
+                    android:text="边框填充" />
             </LinearLayout>
 
         </LinearLayout>

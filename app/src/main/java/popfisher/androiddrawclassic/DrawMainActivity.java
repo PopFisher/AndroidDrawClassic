@@ -18,6 +18,7 @@ public class DrawMainActivity extends Activity implements View.OnClickListener {
 
     private void initView() {
         findViewById(R.id.android_sys_shape_xml).setOnClickListener(this);
+        findViewById(R.id.android_sys_drawable_xml).setOnClickListener(this);
         findViewById(R.id.second_order_bezier_curve).setOnClickListener(this);
         findViewById(R.id.gradient_fill_circle).setOnClickListener(this);
     }
@@ -28,6 +29,9 @@ public class DrawMainActivity extends Activity implements View.OnClickListener {
         switch (id) {
             case R.id.android_sys_shape_xml:
                 jumpToActivity(XmlShapeActivity.class);
+                break;
+            case R.id.android_sys_drawable_xml:
+                jumpToActivity(XmlDrawableActivity.class);
                 break;
             case R.id.second_order_bezier_curve:
                 jumpToActivity(BezierCurveActivity.class);
