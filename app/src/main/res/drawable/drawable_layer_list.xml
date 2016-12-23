@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+    <item >
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="90"
+                android:startColor="#80ff00ff"
+                android:endColor="#10ff00ff" />
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/circle_gradient_radial" />
+    <item android:drawable="@drawable/icon_wifi_small" />
+</layer-list>
