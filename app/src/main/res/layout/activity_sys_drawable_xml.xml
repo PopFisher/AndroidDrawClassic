@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Xml位图-BitmapDrawable\n标签：<bitmap>"
+            android:text="Xml位图-BitmapDrawable\n标签：&#060;bitmap&#062;"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
-            android:text="九宫格-NinePatchDrawable\n标签：<nine-patch>"
+            android:text="九宫格-NinePatchDrawable\n标签：&#060;nine-patch&#062;"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
-            android:text="图层列表LayerDrawable\n标签：<layer-list>"
+            android:text="图层列表LayerDrawable\n标签：&#060;layer-list&#062;"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -89,10 +89,19 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
-            android:text="状态列表StateListDrawable\n标签：<selector>"
+            android:text="状态列表StateListDrawable\n标签：&#060;selector&#062;"
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/drawable_selector" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

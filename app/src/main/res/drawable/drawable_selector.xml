@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/circle_border_and_fill" android:state_pressed="true" />
+    <item android:drawable="@drawable/circle_gradient_radial" android:state_window_focused="true" />
+    <item android:drawable="@drawable/circle_border" />
+</selector>
