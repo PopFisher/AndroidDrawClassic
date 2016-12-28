@@ -13,12 +13,9 @@
         android:padding="15dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/title_tip_style"
             android:layout_marginBottom="10dp"
-            android:text="Xml位图-BitmapDrawable\n标签：&#060;bitmap&#062;"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:text="Xml位图-BitmapDrawable\n标签：&#060;bitmap&#062;" />
 
         <TextView
             android:layout_width="match_parent"
@@ -26,13 +23,8 @@
             android:background="@drawable/drawable_bitmap" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:text="九宫格-NinePatchDrawable\n标签：&#060;nine-patch&#062;"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="九宫格-NinePatchDrawable\n标签：&#060;nine-patch&#062;" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -48,13 +40,8 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:text="图层列表LayerDrawable\n标签：&#060;layer-list&#062;"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="图层列表LayerDrawable\n标签：&#060;layer-list&#062;" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -85,22 +72,41 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:text="状态列表StateListDrawable\n标签：&#060;selector&#062;"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="状态列表StateListDrawable\n标签：&#060;selector&#062;" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
+                android:id="@+id/drawable_selector_1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/drawable_selector" />
+
+            <ImageView
+                android:id="@+id/drawable_selector_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/button_bg_selector" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/title_tip_style"
+            android:text="级别列表LevelListDrawable\n标签：&#060;level-list&#062;" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/drawable_level_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/drawable_level_list" />
         </LinearLayout>
     </LinearLayout>
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 代码中设置level值，会有限从上到下依次匹配，level值在minLevel-maxLevel之间都能匹配 -->
+    <item
+        android:drawable="@drawable/rect_border"
+        android:maxLevel="10"
+        android:minLevel="1" />
+
+    <item
+        android:drawable="@drawable/rect_border_and_fill"
+        android:maxLevel="20"
+        android:minLevel="11" />
+
+</level-list>

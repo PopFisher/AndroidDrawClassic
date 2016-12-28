@@ -13,12 +13,9 @@
         android:padding="15dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="线（实线+虚线）："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:layout_marginTop="0dp"
+            android:text="线（实线+虚线）：" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,13 +34,8 @@
             android:text="虚线" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:text="矩形（边框+填充）："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="矩形（边框+填充）：" />
 
         <TextView
             android:layout_width="match_parent"
@@ -78,13 +70,8 @@
             android:text="矩形虚线边框-内部填充" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:text="圆角矩形："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="圆角矩形：" />
 
         <TextView
             android:layout_width="match_parent"
@@ -169,13 +156,8 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:text="渐变（以矩形为例）："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="渐变（以矩形为例）：" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -243,13 +225,8 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:text="圆（边框+填充+渐变）："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="圆（边框+填充+渐变）：" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -392,13 +369,8 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:text="椭圆（边框+填充+渐变）："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="椭圆（边框+填充+渐变）：" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -536,13 +508,8 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
-            android:text="圆环（边框+填充+渐变）："
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/title_tip_style"
+            android:text="圆环（边框+填充+渐变）：" />
 
         <LinearLayout
             android:layout_width="match_parent"
