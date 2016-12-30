@@ -72,26 +72,797 @@
 
 &emsp;&emsp;![](/docpic/line.png "实线，虚线")
 
+**实线：line\_solid.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 实线 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:shape="line"
+    	android:useLevel="true">
+
+    <stroke
+        android:width="2dp"
+        android:color="#ffff0000" />
+
+	</shape>
+
+**虚线：line\_dashed.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!--虚线
+	    设置类型会line
+	    需要关闭硬件加速虚线才能绘制出来，布局文件中使用的时候需要设置android:layerType="software"
+	    android:width 线宽，布局文件中的View的高度需要比这个值大才可以绘制出来
+	    android:dashWidth 每段破折线的长度
+	    android:dashGap="5dp"每段破折线之间的间隔-->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="line"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:dashGap="5dp"
+	        android:dashWidth="10dp"
+	        android:color="#ffff0000" />
+	
+	</shape>
+
+
 ### 矩形（边框+填充） ###
 
 &emsp;&emsp;![](/docpic/rect.png "边框与填充的组合")
+
+**矩形实线边框内部无填充：rect\_solid\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 实线边框 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	</shape>
+
+**矩形虚线边框内部无填充：rect\_dashed\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 虚线边框 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000"
+	        android:dashGap="5dp"
+	        android:dashWidth="10dp" />
+	
+	</shape>
+
+**矩形实线边框-内部填充：rect\_solid\_border\_and\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 实线边框+内部填充 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	    <solid android:color="#ff00ffff" />
+	
+	</shape>
+
+**矩形虚线边框-内部填充：rect\_dashed\_border\_and\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 虚线边框+内部填充 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000"
+	        android:dashGap="5dp"
+	        android:dashWidth="10dp" />
+	
+	    <solid android:color="#ff00ffff" />
+	</shape>
 
 ### 圆角矩形 ###
 
 &emsp;&emsp;![](/docpic/round_rect.png "圆角矩形")
 
-### 渐变效果 ###
+**圆角矩形-只有边框：rect\_rounded\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形边框圆角 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size android:height="100dp"
+	        android:width="100dp"/>
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	    <corners android:bottomLeftRadius="2dp"
+	        android:bottomRightRadius="2dp"
+	        android:topLeftRadius="2dp"
+	        android:topRightRadius="2dp" />
+	
+	</shape>
+
+**圆角矩形-只有内部填充：rect\_rounded\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆角矩形 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size android:height="100dp"
+	        android:width="100dp"/>
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <corners android:bottomLeftRadius="2dp"
+	        android:bottomRightRadius="2dp"
+	        android:topLeftRadius="2dp"
+	        android:topRightRadius="2dp" />
+	
+	</shape>
+
+**圆角矩形-有边框有填充:rect\_rounded\_border\_and\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形边框+填充 圆角 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size android:height="100dp"
+	        android:width="100dp"/>
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <corners android:bottomLeftRadius="2dp"
+	        android:bottomRightRadius="2dp"
+	        android:topLeftRadius="2dp"
+	        android:topRightRadius="2dp" />
+	
+	</shape>
+
+**圆角矩形-左边圆角为一个半圆弧：rect\_rounded\_left\_arc.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形圆角+左右两边为一个圆弧 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="50dp"
+	        android:height="10dp" />
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <!-- 圆角半径是高度的一般就是一个圆弧了 -->
+	    <corners
+	        android:bottomLeftRadius="20dp"
+	        android:topLeftRadius="20dp" />
+	
+	</shape>
+
+**圆角矩形-左右两边都是半圆弧:rect\_rounded\_left\_right\_arc.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形圆角+左右两边为一个圆弧 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="50dp"
+	        android:height="10dp" />
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <!-- 圆角半径是高度的一般就是一个圆弧了 -->
+	    <corners android:radius="20dp" />
+	
+	</shape>
+
+**圆角矩形-左右两边都是半圆弧-带边框：rect\_rounded\_left\_right\_arc\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形圆角+左右两边为一个圆弧 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="50dp"
+	        android:height="10dp" />
+	
+	    <stroke android:color="#ffff0000"
+	        android:width="2dp"/>
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <!-- 圆角半径是高度的一般就是一个圆弧了 -->
+	    <corners android:radius="20dp" />
+	
+	</shape>
+
+**圆角矩形-圆：rect\_rounded\_arc.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形圆角+圆出一个圆弧 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size android:height="10dp"
+	        android:width="10dp"/>
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <corners android:radius="20dp" />
+	
+	</shape>
+
+**圆角矩形-上下两边半圆弧:rect\_rounded\_top\_bottom\_arc.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形圆角+左右两边为一个圆弧 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="10dp"
+	        android:height="60dp" />
+	
+	    <solid android:color="#8000ff00" />
+	
+	    <!-- 圆角半径是高度的一般就是一个圆弧了 -->
+	    <corners android:radius="10dp" />
+	
+	</shape>
+
+### 渐变效果（以矩形为例） ###
 
 &emsp;&emsp;![](/docpic/gradient.png "渐变效果")
+
+**垂直线性渐变：rect\_gradient\_linear\_vertical.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形内部填充-线性垂直渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="@dimen/shape_size"
+	        android:height="@dimen/shape_size" />
+	
+	    <stroke
+	        android:width="1px"
+	        android:color="#ffff00ff" />
+	
+	    <!-- 调整angle实现水平渐变，垂直渐变或者对角渐变 -->
+	    <gradient
+	        android:angle="-45"
+	        android:centerX="0.5"
+	        android:centerY="0.4"
+	        android:centerColor="#8000ff00"
+	        android:endColor="#1000ff00"
+	        android:startColor="#ff00ff00"
+	        android:type="linear" />
+	</shape>
+
+**水平线性渐变:rect\_gradient\_linear\_horizon.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形内部填充-线性水平渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="@dimen/shape_size"
+	        android:height="@dimen/shape_size" />
+	
+	    <stroke
+	        android:width="1px"
+	        android:color="#ffff00ff" />
+	
+	    <!-- 调整angle实现水平渐变，垂直渐变或者对角渐变 -->
+	    <gradient
+	        android:angle="0"
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:centerColor="#8000ff00"
+	        android:endColor="#ff00ff00"
+	        android:startColor="#1000ff00"
+	        android:type="linear" />
+	</shape>
+
+**对角线线性渐变：rect\_gradient\_linear\_diagonal.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形内部填充-线性对角线渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="@dimen/shape_size"
+	        android:height="@dimen/shape_size" />
+	
+	    <stroke
+	        android:width="1px"
+	        android:color="#ffff00ff" />
+	
+	    <!-- 调整angle实现水平渐变，垂直渐变或者对角渐变 -->
+	    <gradient
+	        android:angle="45"
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:centerColor="#8000ff00"
+	        android:endColor="#1000ff00"
+	        android:startColor="#ff00ff00"
+	        android:type="linear" />
+	</shape>
+
+**径向渐变：rect\_gradient\_radial.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形内部填充-径向渐变,一般不用在rect上，用到圆或者椭圆上 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="@dimen/shape_size"
+	        android:height="@dimen/shape_size" />
+	
+	    <stroke
+	        android:width="1px"
+	        android:color="#ffff00ff" />
+	
+	    <!-- 径向渐变angle无效 -->
+	    <gradient
+	        android:angle="0"
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:startColor="#0000ff00"
+	        android:endColor="#ff00ff00"
+	        android:gradientRadius="40dp"
+	        android:type="radial" />
+	</shape>
+
+**扫描渐变：rect\_gradient\_sweep.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 矩形内部填充-扫描渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="rectangle"
+	    android:useLevel="true">
+	    <!--如果布局中没有设置View的大小，会size设置的大小为默认值-->
+	    <size
+	        android:width="20dp"
+	        android:height="20dp" />
+	
+	    <stroke
+	        android:width="1px"
+	        android:color="#ffff00ff" />
+	
+	    <!--调整angle不能实现角度变化
+	        centerX,centerY是中心点的位置，这里用的是百分比值（0-1）
+	        在rect中gradientRadius无效-->
+	    <gradient
+	        android:angle="0"
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:startColor="#ff00ff00"
+	        android:gradientRadius="20dp"
+	        android:type="sweep" />
+	</shape>
+
 
 ### 圆（边框+填充+渐变） ###
 
 &emsp;&emsp;![](/docpic/circle.png "圆")
 
+**圆-边框：circle\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆形边框 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	</shape>
+
+**圆-填充：circle\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆形边框 + 填充 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <solid android:color="#800000ff" />
+	
+	</shape>
+
+**圆-边框填充：circle\_border\_and\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆形边框 + 填充 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	    <solid android:color="#800000ff" />
+	
+	</shape>
+
+**线性渐变：circle\_gradient\_linear.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆形内部填充-线性渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="@dimen/shape_size"
+	        android:height="@dimen/shape_size" />
+	
+	    <!-- angle调整渐变角度，只能是45的倍数，centerX, centerY是百分百（0-1） -->
+	    <gradient
+	        android:angle="-90"
+	        android:centerX="0.5"
+	        android:centerY="0.8"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#ffff0000"
+	        android:startColor="#00ff0000"
+	        android:type="linear" />
+	
+	</shape>
+
+**径向渐变：circle\_gradient\_radial.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆形内部填充-径向渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="40dp"
+	        android:height="40dp" />
+	
+	    <!-- centerX, centerY是百分百（0-1） -->
+	    <gradient
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:startColor="#ffff0000"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#10ff0000"
+	        android:gradientRadius="30dp"
+	        android:type="radial" />
+	
+	</shape>
+
+**扫描渐变：circle\_gradient\_sweep.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆形内部填充-扫描渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <size
+	        android:width="@dimen/shape_size"
+	        android:height="@dimen/shape_size" />
+	
+	    <!-- sweep类型angle,gradientRadius无效，centerX, centerY是百分百（0-1） -->
+	    <gradient
+	        android:centerX="0.5"
+	        android:centerY="0.6"
+	        android:startColor="#ffff0000"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#20ff0000"
+	        android:gradientRadius="20dp"
+	        android:type="sweep" />
+	
+	</shape>
+
 ### 椭圆（边框+填充+渐变） ###
 
 &emsp;&emsp;![](/docpic/oval.png "椭圆")
 
+**边框：oval\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 椭圆边框 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	</shape>
+
+**填充：oval\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 椭圆填充-->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <solid android:color="#800000ff" />
+	
+	</shape>
+
+**边框+填充：oval\_border\_and\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 椭圆边框 + 填充-->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true">
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff0000" />
+	
+	    <solid android:color="#800000ff" />
+	
+	</shape>
+
+**线性渐变：oval\_gradient\_linear.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 椭圆内部填充-线性渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true" >
+	
+	    <size
+	        android:width="80dp"
+	        android:height="60dp" />
+	
+	    <gradient
+	        android:angle="45"
+	        android:centerX="0.5"
+	        android:centerY="0.7"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#ffff0000"
+	        android:startColor="#00ff0000"
+	        android:type="linear" />
+	
+	</shape>
+
+**径向渐变：oval\_gradient\_radial.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 椭圆内部填充-径向渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true" >
+	
+	    <size
+	        android:width="80dp"
+	        android:height="60dp" />
+	
+	    <gradient
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#00ff0000"
+	        android:startColor="#ffff0000"
+	        android:gradientRadius="40dp"
+	        android:type="radial" />
+	
+	</shape>
+
+**扫描渐变：oval\_gradient\_sweep.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 椭圆内部填充-扫描渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="oval"
+	    android:useLevel="true" >
+	
+	    <size
+	        android:width="80dp"
+	        android:height="60dp" />
+	
+	    <gradient
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#ffff0000"
+	        android:startColor="#00ff0000"
+	        android:type="sweep" />
+	
+	</shape>
+
 ### 圆环（边框+填充+渐变） ###
 
 &emsp;&emsp;![](/docpic/ring.png "圆环")
+
+**环内填充：ring\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?><!-- 圆环 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:innerRadiusRatio="4"
+	    android:shape="ring"
+	    android:thicknessRatio="4"
+	    android:useLevel="false">
+	    <!--android:useLevel="false"必须是false-->
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <solid android:color="#80ff0000" />
+	
+	</shape>
+
+**圆环边框:ring\_border.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆环-仅有边框 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:innerRadius="20dp"
+	    android:shape="ring"
+	    android:thickness="16dp"
+	    android:useLevel="false">
+	    <!--android:useLevel="false"必须是false-->
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff00ff" />
+	</shape>
+
+**边框+填充：ring\_border\_and\_fill.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆环 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:innerRadius="20dp"
+	    android:shape="ring"
+	    android:thickness="16dp"
+	    android:useLevel="false">
+	    <!--android:useLevel="false"必须是false-->
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <solid android:color="#80ff0000" />
+	
+	    <stroke
+	        android:width="2dp"
+	        android:color="#ffff00ff" />
+	</shape>
+
+
+**线性渐变：ring\_gradient\_linear.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆环-线性渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="ring"
+	    android:innerRadius="10dp"
+	    android:thickness="30dp"
+	    android:useLevel="false">
+	    <!--android:useLevel="false"必须是false-->
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <gradient
+	        android:angle="45"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#ffff0000"
+	        android:startColor="#00ff0000"
+	        android:type="linear" />
+	
+	</shape>
+
+**径向渐变：ring\_gradient\_radial.xml**
+	
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆环-径向渐变渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="ring"
+	    android:innerRadius="10dp"
+	    android:thickness="30dp"
+	    android:useLevel="false">
+	    <!--android:useLevel="false"必须是false-->
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <!--设置径向渐变半径，渐变从圆心开始-->
+	    <gradient
+	        android:centerX="0.5"
+	        android:centerY="0.5"
+	        android:centerColor="#80ff0000"
+	        android:endColor="#00ff0000"
+	        android:startColor="#ffff0000"
+	        android:gradientRadius="40dp"
+	        android:type="radial" />
+	
+	</shape>
+
+**扫描渐变:ring\_gradient\_sweep.xml**
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<!-- 圆环-线性渐变 -->
+	<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:shape="ring"
+	    android:innerRadius="10dp"
+	    android:thickness="30dp"
+	    android:useLevel="false">
+	    <!--android:useLevel="false"必须是false-->
+	
+	    <size
+	        android:width="80dp"
+	        android:height="80dp" />
+	
+	    <!--扫描渐变shape不能设置角度-->
+	    <gradient
+	        android:centerColor="#80ff0000"
+	        android:endColor="#ffff0000"
+	        android:startColor="#00ff0000"
+	        android:type="sweep" />
+	
+	</shape>

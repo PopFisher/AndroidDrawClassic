@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 矩形内部填充-径向渐变,一般不用在rect上 -->
+<!-- 矩形内部填充-径向渐变,一般不用在rect上，用到圆或者椭圆上 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle"
     android:useLevel="true">
