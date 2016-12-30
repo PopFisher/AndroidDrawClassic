@@ -44,15 +44,21 @@
 
 &emsp;&emsp;ring      --> 圆环
 
+</br>
+
 &emsp;&emsp;**shape 可以定义边框属性**
 
 &emsp;&emsp;有边框，无边框，虚线边框，实线边框
+
+</br>
 
 &emsp;&emsp;**shape 可以实现矩形圆角效果**
 
 &emsp;&emsp;可以指定其中一个角或者多个角设置圆角效果
 
 &emsp;&emsp;指定圆角半径设置圆角的大小
+
+</br>
 
 &emsp;&emsp;**shape 可以实现三种渐变，由子标签 gradient 实现**
 
@@ -67,6 +73,8 @@
 &emsp;&emsp;更多更详细关于 shape 的介绍请移步  [Android GradientDrawable(shape标签定义) 静态使用和动态使用(圆角，渐变实现)](http://www.cnblogs.com/popfisher/p/5606690.html "Android GradientDrawable(shape标签定义) 静态使用和动态使用")
 
 &emsp;&emsp;**由上面的组合可以定义很多 Drawable，下面依次进行介**绍：
+
+</br>
 
 ### 线（实线+虚线） ###
 
@@ -866,3 +874,8 @@
 	        android:type="sweep" />
 	
 	</shape>
+
+
+## 总结 ##
+
+&emsp;&emsp;熟练掌握好 shape 标签的使用，能够构建出多种多样的 Drawable，这些 Drawable 可以直接作为背景设置给 View，代码通过 R.drawable 方式使用，xml 文件通过 @drawabl/nmae 使用。跟图片的使用一模一样，关键是使用系统 Drawable 可以减少 apk 的体积，减少内存占用等好处，所以，不要觉得简单就不系统学习，越简单的东西越要熟练掌握。后面还会陆续出一些 Drawable 的文章，比如除了shape标签定义的 Drawable，其他还有哪些 xml 标签能定义 Drawable？ Drawable怎么通过代码的方式创建并使用？
