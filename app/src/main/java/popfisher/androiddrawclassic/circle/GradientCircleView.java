@@ -2,7 +2,6 @@ package popfisher.androiddrawclassic.circle;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
@@ -91,7 +90,7 @@ public class GradientCircleView extends View {
         mRadialGradient = new RadialGradient(mRectF.centerX(), mRectF.centerY(), mRectF.width() / 2 + 6, mFillColors2, null, Shader.TileMode.MIRROR);
     }
 
-    private Bitmap drawableToBitamp(Drawable drawable, int w, int h) {
+    private Bitmap drawableToBitmap(Drawable drawable, int w, int h) {
         Bitmap.Config config =
                 drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
                         : Bitmap.Config.RGB_565;
@@ -104,7 +103,7 @@ public class GradientCircleView extends View {
     }
 
     private Bitmap createGradientBitmap(int buttonBmpWidth, int buttonBmpHeight) {
-        return drawableToBitamp(createGradientDrawable(), buttonBmpWidth, buttonBmpHeight);
+        return drawableToBitmap(createGradientDrawable(), buttonBmpWidth, buttonBmpHeight);
     }
 
     /**

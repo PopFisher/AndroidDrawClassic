@@ -1,0 +1,136 @@
+package popfisher.androiddrawclassic.samples.sample1;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.graphics.SweepGradient;
+
+import popfisher.androiddrawclassic.AppContext;
+import popfisher.androiddrawclassic.samples.IViewNotifyListener;
+import popfisher.androiddrawclassic.utils.UnitConvertUtil;
+
+/**
+ * 实现一个雷达扫描控件，分两层绘制
+ * bottom层：绘制盘面，静止不动的部分
+ * top层：绘制旋转的部分，一个扇形在旋转
+ */
+
+public class RadarScanHelper {
+
+    private Context mAppContext = AppContext.getInstance().getAppContext();
+
+    private int mHostWidth = 0;
+    private int mHostHeight = 0;
+    private int mCenterX = 0;
+    private int mCenterY = 0;
+
+    private Paint mPaint;
+    private boolean isHasInit = false;
+    private static final int CIRCLE1_RADIUS = 67;   // dp
+    private static final int CIRCLE2_RADIUS = 89;   // dp
+    private static final int CIRCLE3_RADIUS = 113;  // dp
+    private static final int STROKE_WIDTH = 1;  // dp
+    private static final float SECTOR_WIDTH = 2.5f;  // dp
+    private static final float START_DEGREES = -90;
+
+    private float mCircle1Radius = 0.0f;
+    private float mCircle2Radius = 0.0f;
+    private float mCircle3Radius = 0.0f;
+    private float mStrokeWidth = 0.0f;
+    private float mSectorWidth = 0.0f;
+
+    private int mCircleBorderColor = 0x80ffffff;
+    private int mCircleDiameterColor = 0x33ffffff;
+
+    private IViewNotifyListener mViewNotifyListener;
+
+    public RadarScanHelper(IViewNotifyListener viewNotifyListener) {
+        mViewNotifyListener = viewNotifyListener;
+    }
+
+    public void draw(Canvas canvas, int hostWidth, int hostHeight) {
+        initParams(hostWidth, hostHeight);
+        drawTarget(canvas);
+    }
+
+    private void initParams(int hostWidth, int hostHeight) {
+        if (mHostWidth == hostWidth && mHostHeight == hostHeight) {
+            return;
+        }
+        mHostWidth = hostWidth;
+        mHostHeight = hostHeight;
+        mCenterX = hostWidth / 2;
+        mCenterY = hostHeight / 2;
+        if (isHasInit) {
+            return;
+        }
+        mPaint = new Paint();
+        mPaint.setAntiAlias(true);
+        mCircle1Radius = UnitConvertUtil.dp2px(mAppContext, CIRCLE1_RADIUS);
+        mCircle2Radius = UnitConvertUtil.dp2px(mAppContext, CIRCLE2_RADIUS);
+        mCircle3Radius = UnitConvertUtil.dp2px(mAppContext, CIRCLE3_RADIUS);
+        mStrokeWidth = UnitConvertUtil.dp2px(mAppContext, STROKE_WIDTH);
+        mSectorWidth = UnitConvertUtil.dp2px(mAppContext, SECTOR_WIDTH);
+    }
+
+    private void drawTarget(Canvas canvas) {
+        drawBottomLayer(canvas);
+        drawTopLayer(canvas);
+        if (mViewNotifyListener != null) {
+            mRotateAngle += 2;
+            mViewNotifyListener.invalidateView();
+        }
+    }
+
+    private void drawBottomLayer(Canvas canvas) {
+        mPaint.setShader(null);
+        mPaint.setColor(mCircleBorderColor);
+        mPaint.setStrokeWidth(mStrokeWidth);
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawCircle(mCenterX, mCenterY, mCircle1Radius, mPaint);
+        canvas.drawCircle(mCenterX, mCenterY, mCircle2Radius, mPaint);
+        canvas.drawCircle(mCenterX, mCenterY, mCircle3Radius, mPaint);
+
+        mPaint.setColor(mCircleDiameterColor);
+        canvas.drawLine(mCenterX - mCircle3Radius, mCenterY, mCenterX + mCircle3Radius, mCenterY, mPaint);
+        canvas.drawLine(mCenterX, mCenterY - mCircle3Radius, mCenterX, mCenterY + mCircle3Radius, mPaint);
+    }
+
+    private SweepGradient mSweepGradient;
+    private Matrix mMatrix = new Matrix();
+    private int mColors[] = { 0x00000000, 0xffffffff};
+    private float mPositions[] = { 0.75f, 1.0f };
+    private void drawTopLayer(Canvas canvas) {
+        mPaint.setStyle(Paint.Style.FILL);
+        if (mSweepGradient == null) {
+            mSweepGradient = new SweepGradient(mCenterX, mCenterY, mColors, mPositions);
+        }
+        mMatrix.setRotate(START_DEGREES + mRotateAngle, mCenterX, mCenterY);
+        mSweepGradient.setLocalMatrix(mMatrix);
+        mPaint.setShader(mSweepGradient);
+        canvas.drawCircle(mCenterX, mCenterY, mCircle3Radius, mPaint);
+        drawLine(canvas);
+    }
+
+    private final static int[] LINE_COLORS = { 0x00ffffff, 0xffffffff };     // 圆心到头部圆球的线颜色
+    private void drawLine(Canvas canvas) {
+        float[] positions = calculateCircle();
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(mSectorWidth);
+        mPaint.setShader(new LinearGradient(mCenterX, mCenterY, positions[0], positions[1], LINE_COLORS, null, Shader.TileMode.CLAMP));
+        canvas.drawLine(mCenterX, mCenterY, positions[0], positions[1], mPaint);
+    }
+
+    private float mRotateAngle = 0.0f;
+    private float[] calculateCircle() {
+        double headCircleRadian = Math.PI / 180f * mRotateAngle;                                    // 角度转弧度
+        float circleX = (float) (mCenterX + mCircle3Radius * Math.sin(headCircleRadian));
+        float circleY = (float) (mCenterY - mCircle3Radius * Math.cos(headCircleRadian));           // 手机屏幕中，y轴是从上到下，所这里是减
+
+        float[] positions = {circleX, circleY};
+        return positions;
+    }
+}

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import popfisher.androiddrawclassic.samples.SamplesActivity;
+
 public class DrawMainActivity extends Activity implements View.OnClickListener {
 
     @Override
@@ -22,6 +24,7 @@ public class DrawMainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.android_sys_drawable_xml).setOnClickListener(this);
         findViewById(R.id.second_order_bezier_curve).setOnClickListener(this);
         findViewById(R.id.gradient_fill_circle).setOnClickListener(this);
+        findViewById(R.id.draw_samples).setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +42,9 @@ public class DrawMainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.gradient_fill_circle:
                 jumpToActivity(GradientCircleActivity.class);
+                break;
+            case R.id.draw_samples:
+                jumpToActivity(SamplesActivity.class);
                 break;
         }
     }

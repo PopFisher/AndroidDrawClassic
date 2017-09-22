@@ -8,26 +8,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/android_sys_shape_xml"
             style="@style/button_style_white_bg"
-            android:text="@string/android_shape_xml"/>
+            android:text="@string/android_shape_xml" />
 
         <Button
             android:id="@+id/android_sys_drawable_xml"
             style="@style/button_style_white_bg"
-            android:text="@string/android_drawable_xml"/>
+            android:text="@string/android_drawable_xml" />
 
         <Button
             android:id="@+id/second_order_bezier_curve"
             style="@style/button_style_white_bg"
-            android:text="@string/second_order_bezier_curve"/>
+            android:text="@string/second_order_bezier_curve" />
+
         <Button
             android:id="@+id/gradient_fill_circle"
             style="@style/button_style_white_bg"
-            android:text="@string/gradient_fill_circle"/>
+            android:text="@string/gradient_fill_circle" />
+
+        <Button
+            android:id="@+id/draw_samples"
+            style="@style/button_style_white_bg"
+            android:text="@string/samples" />
     </LinearLayout>
 </ScrollView>
