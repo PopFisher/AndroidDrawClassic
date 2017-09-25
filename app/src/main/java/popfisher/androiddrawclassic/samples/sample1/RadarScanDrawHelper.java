@@ -36,7 +36,7 @@ public class RadarScanDrawHelper {
     private static final int CIRCLE2_RADIUS = 89;   // dp
     private static final int CIRCLE3_RADIUS = 113;  // dp
     private static final int STROKE_WIDTH = 1;  // dp
-    private static final float SECTOR_WIDTH = 2.5f;  // dp
+    private static final float SECTOR_WIDTH = 1.5f;  // dp
     private static final float START_DEGREES = -90;
 
     private float mCircle1Radius = 0.0f;
@@ -106,6 +106,7 @@ public class RadarScanDrawHelper {
 
     private Bitmap mLogoBitmap;
     private static final int mLogoResId = R.drawable.ic_launcher;
+
     private void drawLogoIcon(Canvas canvas) {
         mPaint.setAlpha(255);   // 这里透明度要设置为不透明，因为透明度会被setColor修改掉
         if (mLogoBitmap == null) {
@@ -116,8 +117,9 @@ public class RadarScanDrawHelper {
 
     private SweepGradient mSweepGradient;
     private Matrix mMatrix = new Matrix();
-    private int mColors[] = { 0x00000000, 0x40ffffff };
-    private float mPositions[] = { 0.75f, 1.0f };
+    private int mColors[] = {0x00000000, 0x40ffffff};
+    private float mPositions[] = {0.75f, 1.0f};
+
     private void drawTopLayer(Canvas canvas) {
         mPaint.setStyle(Paint.Style.FILL);
         if (mSweepGradient == null) {
@@ -130,9 +132,10 @@ public class RadarScanDrawHelper {
         drawLine(canvas);
     }
 
-    private final static int[] LINE_COLORS = { 0x00ffffff, 0xffffffff };     // 圆心到头部圆球的线颜色
+    private final static int[] LINE_COLORS = {0x00ffffff, 0xffffffff};     // 圆心到头部圆球的线颜色
+
     private void drawLine(Canvas canvas) {
-        float[] positions = calculateCircle();
+        float[] positions = calculateCirclePtXY();
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(mSectorWidth);
         mPaint.setShader(new LinearGradient(mCenterX, mCenterY, positions[0], positions[1], LINE_COLORS, null, Shader.TileMode.CLAMP));
@@ -140,11 +143,15 @@ public class RadarScanDrawHelper {
     }
 
     private float mRotateAngle = 0.0f;
-    private float[] calculateCircle() {
-        double headCircleRadian = Math.PI / 180f * mRotateAngle;                                    // 角度转弧度
-        float circleX = (float) (mCenterX + mCircle3Radius * Math.sin(headCircleRadian));
-        float circleY = (float) (mCenterY - mCircle3Radius * Math.cos(headCircleRadian));           // 手机屏幕中，y轴是从上到下，所这里是减
 
+    /**
+     * 计算圆上任一点的坐标，起始点从顶部开始，按顺时针方向旋转
+     * @return
+     */
+    private float[] calculateCirclePtXY() {
+        double circlePointRadian = Math.PI / 180f * mRotateAngle;                                    // 角度转弧度
+        float circleX = (float) (mCenterX + mCircle3Radius * Math.sin(circlePointRadian));
+        float circleY = (float) (mCenterY - mCircle3Radius * Math.cos(circlePointRadian));           // 手机屏幕中，y轴是从上到下，所这里是减
         float[] positions = {circleX, circleY};
         return positions;
     }
