@@ -1,6 +1,8 @@
 package popfisher.androiddrawclassic.samples.sample1;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
@@ -9,6 +11,7 @@ import android.graphics.Shader;
 import android.graphics.SweepGradient;
 
 import popfisher.androiddrawclassic.AppContext;
+import popfisher.androiddrawclassic.R;
 import popfisher.androiddrawclassic.samples.IViewNotifyListener;
 import popfisher.androiddrawclassic.utils.UnitConvertUtil;
 
@@ -18,7 +21,7 @@ import popfisher.androiddrawclassic.utils.UnitConvertUtil;
  * top层：绘制旋转的部分，一个扇形在旋转
  */
 
-public class RadarScanHelper {
+public class RadarScanDrawHelper {
 
     private Context mAppContext = AppContext.getInstance().getAppContext();
 
@@ -47,7 +50,7 @@ public class RadarScanHelper {
 
     private IViewNotifyListener mViewNotifyListener;
 
-    public RadarScanHelper(IViewNotifyListener viewNotifyListener) {
+    public RadarScanDrawHelper(IViewNotifyListener viewNotifyListener) {
         mViewNotifyListener = viewNotifyListener;
     }
 
@@ -97,11 +100,23 @@ public class RadarScanHelper {
         mPaint.setColor(mCircleDiameterColor);
         canvas.drawLine(mCenterX - mCircle3Radius, mCenterY, mCenterX + mCircle3Radius, mCenterY, mPaint);
         canvas.drawLine(mCenterX, mCenterY - mCircle3Radius, mCenterX, mCenterY + mCircle3Radius, mPaint);
+
+        drawLogoIcon(canvas);
+    }
+
+    private Bitmap mLogoBitmap;
+    private static final int mLogoResId = R.drawable.ic_launcher;
+    private void drawLogoIcon(Canvas canvas) {
+        mPaint.setAlpha(255);   // 这里透明度要设置为不透明，因为透明度会被setColor修改掉
+        if (mLogoBitmap == null) {
+            mLogoBitmap = BitmapFactory.decodeResource(AppContext.getInstance().getResources(), mLogoResId);
+        }
+        canvas.drawBitmap(mLogoBitmap, mCenterX - mLogoBitmap.getWidth() / 2, mCenterY - mLogoBitmap.getHeight() / 2, mPaint);
     }
 
     private SweepGradient mSweepGradient;
     private Matrix mMatrix = new Matrix();
-    private int mColors[] = { 0x00000000, 0xffffffff};
+    private int mColors[] = { 0x00000000, 0x40ffffff };
     private float mPositions[] = { 0.75f, 1.0f };
     private void drawTopLayer(Canvas canvas) {
         mPaint.setStyle(Paint.Style.FILL);

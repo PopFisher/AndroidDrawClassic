@@ -16,7 +16,7 @@ import android.view.View;
 
 /**
  * Created by popfisher on 2016/12/5.
- * 绘制带渐变填充颜色的椭圆（园）
+ * 绘制带渐变填充颜色的椭圆（圆）
  */
 
 public class GradientCircleView extends View {

@@ -13,7 +13,7 @@ import popfisher.androiddrawclassic.samples.IViewNotifyListener;
 
 public class RadarScanView extends View implements IViewNotifyListener {
 
-    private RadarScanHelper mRadarScanHelper;
+    private RadarScanDrawHelper mRadarScanDrawHelper;
 
     public RadarScanView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -22,10 +22,10 @@ public class RadarScanView extends View implements IViewNotifyListener {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (mRadarScanHelper == null) {
-            mRadarScanHelper = new RadarScanHelper(this);
+        if (mRadarScanDrawHelper == null) {
+            mRadarScanDrawHelper = new RadarScanDrawHelper(this);
         }
-        mRadarScanHelper.draw(canvas, getWidth(), getHeight());
+        mRadarScanDrawHelper.draw(canvas, getWidth(), getHeight());
     }
 
     @Override

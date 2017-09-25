@@ -1,6 +1,7 @@
 package popfisher.androiddrawclassic;
 
 import android.content.Context;
+import android.content.res.Resources;
 
 /**
  * 提供获取ApplicationContext的公共方法
@@ -28,5 +29,9 @@ public class AppContext {
 
     public Context getAppContext() {
         return mAppContext;
+    }
+
+    public Resources getResources() {
+        return mAppContext.getResources();
     }
 }
