@@ -2,14 +2,13 @@ package popfisher.androiddrawclassic;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import popfisher.androiddrawclassic.canvasdraw.BasicDrawActivity;
 import popfisher.androiddrawclassic.samples.SamplesActivity;
+import popfisher.androiddrawclassic.samples.beziercurve.BezierCurveActivity;
+import popfisher.androiddrawclassic.samples.gradientcircle.GradientCircleActivity;
 
 public class DrawMainActivity extends Activity implements View.OnClickListener {
 

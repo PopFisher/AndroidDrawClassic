@@ -22,7 +22,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/circle_gradient_linear" />
 
-        <popfisher.androiddrawclassic.circle.GradientCircleView
+        <popfisher.androiddrawclassic.samples.gradientcircle.GradientCircleView
             android:id="@+id/gradient_circle_2"
             android:layout_width="250dp"
             android:layout_height="250dp"
@@ -31,7 +31,7 @@
             android:layout_marginTop="10dp"
             android:background="#FF0F7EFA" />
 
-        <popfisher.androiddrawclassic.circle.GradientCircleView
+        <popfisher.androiddrawclassic.samples.gradientcircle.GradientCircleView
             android:id="@+id/gradient_circle_3"
             android:layout_width="250dp"
             android:layout_height="250dp"
@@ -40,7 +40,7 @@
             android:layout_marginTop="10dp"
             android:background="#FFFF553E" />
 
-        <popfisher.androiddrawclassic.circle.GradientCircleView
+        <popfisher.androiddrawclassic.samples.gradientcircle.GradientCircleView
             android:id="@+id/gradient_circle_4"
             android:layout_width="250dp"
             android:layout_height="250dp"

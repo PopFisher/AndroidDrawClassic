@@ -1,4 +1,4 @@
-package popfisher.androiddrawclassic.circle;
+package popfisher.androiddrawclassic.samples.gradientcircle;
 
 import android.content.Context;
 import android.graphics.Bitmap;

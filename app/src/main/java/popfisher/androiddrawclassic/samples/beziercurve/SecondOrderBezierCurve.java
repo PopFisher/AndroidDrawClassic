@@ -1,4 +1,4 @@
-package popfisher.androiddrawclassic.beziercurve;
+package popfisher.androiddrawclassic.samples.beziercurve;
 
 import android.content.Context;
 import android.graphics.Canvas;

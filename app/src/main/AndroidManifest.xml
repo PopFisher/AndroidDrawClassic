@@ -17,14 +17,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".BezierCurveActivity" />
-        <activity android:name=".GradientCircleActivity" />
+        <activity android:name=".samples.beziercurve.BezierCurveActivity" />
+        <activity android:name=".samples.gradientcircle.GradientCircleActivity" />
         <activity android:name=".XmlShapeActivity" />
         <activity android:name=".XmlDrawableActivity" />
         <activity android:name=".samples.SamplesActivity" />
         <activity android:name=".samples.sample1.Sample1Activity" />
-        <activity android:name=".canvasdraw.text.DrawTextActivity" />
+        <activity android:name=".canvasdraw.arc.DrawArcActivity" />
         <activity android:name=".canvasdraw.BasicDrawActivity" />
+        <activity android:name=".canvasdraw.bitmap.DrawBitmapActivity" />
+        <activity android:name=".canvasdraw.circle.DrawCircleActivity" />
+        <activity android:name=".canvasdraw.gradient.DrawGradientActivity" />
+        <activity android:name=".canvasdraw.line.DrawLineActivity" />
+        <activity android:name=".canvasdraw.oval.DrawOvalActivity" />
+        <activity android:name=".canvasdraw.path.DrawPathActivity" />
+        <activity android:name=".canvasdraw.picture.DrawPictureActivity" />
+        <activity android:name=".canvasdraw.point.DrawPointActivity" />
+        <activity android:name=".canvasdraw.rect.DrawRectActivity" />
+        <activity android:name=".canvasdraw.roundrect.DrawRoundRectActivity" />
+        <activity android:name=".canvasdraw.text.DrawTextActivity" />
     </application>
 
 </manifest>

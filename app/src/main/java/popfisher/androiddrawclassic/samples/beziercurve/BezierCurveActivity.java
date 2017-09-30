@@ -1,7 +1,9 @@
-package popfisher.androiddrawclassic;
+package popfisher.androiddrawclassic.samples.beziercurve;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import popfisher.androiddrawclassic.R;
 
 public class BezierCurveActivity extends Activity {
 
