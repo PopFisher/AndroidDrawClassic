@@ -22,6 +22,11 @@
             android:text="@string/android_drawable_xml" />
 
         <Button
+            android:id="@+id/android_canvas_basic_draw"
+            style="@style/button_style_white_bg"
+            android:text="@string/android_canvas_basic_draw" />
+
+        <Button
             android:id="@+id/second_order_bezier_curve"
             style="@style/button_style_white_bg"
             android:text="@string/second_order_bezier_curve" />

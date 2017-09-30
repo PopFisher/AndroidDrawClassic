@@ -4,6 +4,9 @@
     <string name="gradient_fill_circle">渐变圆形（内部填充颜色）</string>
     <string name="android_shape_xml">用Xml文件shape标签定义的Drawable</string>
     <string name="android_drawable_xml">用Xml文件其他标签定义的Drawable</string>
+    <string name="android_canvas_basic_draw">Canvas基础绘制</string>
     <string name="samples">很多经典通用的自定义控件</string>
     <string name="sample1">罗盘扫描，类似扫描垃圾，杀毒那种控件</string>
+    <string name="basic_draw_line">画线</string>
+    <string name="basic_draw_text">绘制文本</string>
 </resources>

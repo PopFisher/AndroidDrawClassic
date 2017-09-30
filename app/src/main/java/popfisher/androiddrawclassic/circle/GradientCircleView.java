@@ -5,14 +5,14 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.PixelFormat;
 import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import popfisher.androiddrawclassic.utils.BitmapUtil;
 
 /**
  * Created by popfisher on 2016/12/5.
@@ -90,20 +90,8 @@ public class GradientCircleView extends View {
         mRadialGradient = new RadialGradient(mRectF.centerX(), mRectF.centerY(), mRectF.width() / 2 + 6, mFillColors2, null, Shader.TileMode.MIRROR);
     }
 
-    private Bitmap drawableToBitmap(Drawable drawable, int w, int h) {
-        Bitmap.Config config =
-                drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
-                        : Bitmap.Config.RGB_565;
-        Bitmap bitmap = Bitmap.createBitmap(w, h, config);
-        //注意，下面三行代码要用到，否在在View或者surfaceview里的canvas.drawBitmap会看不到图
-        Canvas canvas = new Canvas(bitmap);
-        drawable.setBounds(0, 0, w, h);
-        drawable.draw(canvas);
-        return bitmap;
-    }
-
     private Bitmap createGradientBitmap(int buttonBmpWidth, int buttonBmpHeight) {
-        return drawableToBitmap(createGradientDrawable(), buttonBmpWidth, buttonBmpHeight);
+        return BitmapUtil.drawableToBitmap(createGradientDrawable(), buttonBmpWidth, buttonBmpHeight);
     }
 
     /**

@@ -70,8 +70,7 @@ public class RadarScanDrawHelper {
         if (isHasInit) {
             return;
         }
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
         mCircle1Radius = UnitConvertUtil.dp2px(mAppContext, CIRCLE1_RADIUS);
         mCircle2Radius = UnitConvertUtil.dp2px(mAppContext, CIRCLE2_RADIUS);
         mCircle3Radius = UnitConvertUtil.dp2px(mAppContext, CIRCLE3_RADIUS);

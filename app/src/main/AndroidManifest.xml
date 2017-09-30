@@ -23,6 +23,8 @@
         <activity android:name=".XmlDrawableActivity" />
         <activity android:name=".samples.SamplesActivity" />
         <activity android:name=".samples.sample1.Sample1Activity" />
+        <activity android:name=".canvasdraw.text.DrawTextActivity" />
+        <activity android:name=".canvasdraw.BasicDrawActivity" />
     </application>
 
 </manifest>
