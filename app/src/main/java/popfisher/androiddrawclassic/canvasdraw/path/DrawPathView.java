@@ -2,8 +2,10 @@ package popfisher.androiddrawclassic.canvasdraw.path;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -14,11 +16,12 @@ import android.view.View;
 public class DrawPathView extends View {
     private Paint mPaint;
     private Path mPath;
+    private float mPhase;
 
-    private float mLineStrokeSize       = 10;       // 线边框大小
-    private float mDashLineStrokeSize   = 10;       // 虚线边框大小
-    private float mDashLineLength       = 20;       // 一小段虚线的长度
-    private float mDashWidth            = 20;       // 虚线中间间隔的长度
+    private float mLineStrokeSize = 10;         // 线边框大小
+    private float mDashLineStrokeSize = 10;     // 虚线边框大小
+    private float mDashLineLength = 20;         // 一小段虚线的长度
+    private float mDashWidth = 20;              // 虚线中间间隔的长度
 
     public DrawPathView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -32,11 +35,30 @@ public class DrawPathView extends View {
             mPaint.setColor(0xffff0000);
             mPath = new Path();
         }
+        mPaint.setPathEffect(null);
         mPaint.setStrokeWidth(mLineStrokeSize);
         mPaint.setStyle(Paint.Style.STROKE);
-
-        mPath.moveTo(0, getHeight() / 2);
-        mPath.lineTo(getWidth(), getHeight() /2);
+        mPath.reset();
+        // 用Path画一条直线
+        mPath.moveTo(0, 50);
+        mPath.lineTo(getWidth(), 50);
         canvas.drawPath(mPath, mPaint);
+
+        // 用Path画一条虚线
+        mPaint.setStrokeWidth(mDashLineStrokeSize);
+        mPath.reset();
+        mPath.moveTo(0, 100);
+        mPath.lineTo(getWidth(), 100);
+        mPaint.setPathEffect(new DashPathEffect(new float[]{mDashLineLength, mDashWidth}, 0));
+        canvas.drawPath(mPath, mPaint);
+
+        // 用Path画一条虚线，自动水平滚动
+        mPaint.setStrokeWidth(mDashLineStrokeSize);
+        mPath.reset();
+        mPath.moveTo(0, 150);
+        mPath.lineTo(getWidth(), 150);
+        mPaint.setPathEffect(new DashPathEffect(new float[]{mDashLineLength, mDashWidth}, mPhase++));
+        canvas.drawPath(mPath, mPaint);
+        invalidate();
     }
 }
