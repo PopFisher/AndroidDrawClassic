@@ -62,22 +62,22 @@ public class DrawTriangleView extends View {
             case ARROW_UP:
                 mPath.moveTo(targetRectF.centerX(), targetRectF.top);
                 mPath.lineTo(targetRectF.right, targetRectF.bottom);
-                mPath.rLineTo(-targetRectF.width(), 0);
+                mPath.lineTo(targetRectF.left, targetRectF.bottom);
                 break;
             case ARROW_DOWN:
                 mPath.moveTo(targetRectF.centerX(), targetRectF.bottom);
                 mPath.lineTo(targetRectF.left, targetRectF.top);
-                mPath.rLineTo(targetRectF.width(), 0);
+                mPath.lineTo(targetRectF.right, targetRectF.top);
                 break;
             case ARROW_LEFT:
                 mPath.moveTo(targetRectF.left, targetRectF.centerY());
                 mPath.lineTo(targetRectF.right, targetRectF.top);
-                mPath.rLineTo(0, targetRectF.height());
+                mPath.lineTo(targetRectF.right, targetRectF.bottom);
                 break;
             case ARROW_RIGHT:
                 mPath.moveTo(targetRectF.right, targetRectF.centerY());
                 mPath.lineTo(targetRectF.left, targetRectF.bottom);
-                mPath.rLineTo(0, -targetRectF.height());
+                mPath.lineTo(targetRectF.left, targetRectF.top);
                 break;
         }
         mPath.close();

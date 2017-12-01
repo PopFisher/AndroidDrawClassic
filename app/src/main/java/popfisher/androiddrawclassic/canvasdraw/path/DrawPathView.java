@@ -40,23 +40,30 @@ public class DrawPathView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mPath.reset();
         // 用Path画一条直线
-        mPath.moveTo(0, 50);
-        mPath.lineTo(getWidth(), 50);
+        mPath.moveTo(0, 100);
+        mPath.lineTo(getWidth(), 100);
+        canvas.drawPath(mPath, mPaint);
+
+        // 用Path两天不连续条直线
+        mPath.moveTo(0, 200);
+        mPath.lineTo(getWidth() * 1 / 3, 200);
+        mPath.moveTo(getWidth() * 2 / 3, 200);
+        mPath.lineTo(getWidth(), 200);
         canvas.drawPath(mPath, mPaint);
 
         // 用Path画一条虚线
         mPaint.setStrokeWidth(mDashLineStrokeSize);
         mPath.reset();
-        mPath.moveTo(0, 100);
-        mPath.lineTo(getWidth(), 100);
+        mPath.moveTo(0, 300);
+        mPath.lineTo(getWidth(), 300);
         mPaint.setPathEffect(new DashPathEffect(new float[]{mDashLineLength, mDashWidth}, 0));
         canvas.drawPath(mPath, mPaint);
 
         // 用Path画一条虚线，自动水平滚动
         mPaint.setStrokeWidth(mDashLineStrokeSize);
         mPath.reset();
-        mPath.moveTo(0, 150);
-        mPath.lineTo(getWidth(), 150);
+        mPath.moveTo(0, 400);
+        mPath.lineTo(getWidth(), 400);
         mPaint.setPathEffect(new DashPathEffect(new float[]{mDashLineLength, mDashWidth}, mPhase++));
         canvas.drawPath(mPath, mPaint);
         invalidate();
