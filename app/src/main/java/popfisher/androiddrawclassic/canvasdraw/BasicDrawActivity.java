@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import popfisher.androiddrawclassic.R;
+import popfisher.androiddrawclassic.canvasdraw.line.DrawLineActivity;
+import popfisher.androiddrawclassic.canvasdraw.path.DrawPathActivity;
 import popfisher.androiddrawclassic.canvasdraw.text.DrawTextActivity;
+import popfisher.androiddrawclassic.canvasdraw.triangle.DrawTriangleActivity;
 import popfisher.androiddrawclassic.samples.sample1.Sample1Activity;
 
 public class BasicDrawActivity extends Activity implements View.OnClickListener {
@@ -20,6 +23,8 @@ public class BasicDrawActivity extends Activity implements View.OnClickListener 
 
     private void initView() {
         findViewById(R.id.basic_draw_line).setOnClickListener(this);
+        findViewById(R.id.basic_draw_path).setOnClickListener(this);
+        findViewById(R.id.basic_draw_triangle).setOnClickListener(this);
         findViewById(R.id.basic_draw_text).setOnClickListener(this);
     }
 
@@ -28,10 +33,16 @@ public class BasicDrawActivity extends Activity implements View.OnClickListener 
         final int id = v.getId();
         switch (id) {
             case R.id.basic_draw_line:
-                jumpToActivity(DrawTextActivity.class);
+                jumpToActivity(DrawLineActivity.class);
                 break;
             case R.id.basic_draw_text:
                 jumpToActivity(DrawTextActivity.class);
+                break;
+            case R.id.basic_draw_path:
+                jumpToActivity(DrawPathActivity.class);
+                break;
+            case R.id.basic_draw_triangle:
+                jumpToActivity(DrawTriangleActivity.class);
                 break;
         }
     }

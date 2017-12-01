@@ -9,4 +9,6 @@
     <string name="sample1">罗盘扫描，类似扫描垃圾，杀毒那种控件</string>
     <string name="basic_draw_line">画线</string>
     <string name="basic_draw_text">绘制文本</string>
+    <string name="basic_draw_path">绘制路径</string>
+    <string name="basic_draw_triangle">绘制三角形</string>
 </resources>

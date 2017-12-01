@@ -16,6 +16,16 @@
             android:text="@string/basic_draw_line" />
 
         <Button
+            android:id="@+id/basic_draw_path"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_path" />
+
+        <Button
+            android:id="@+id/basic_draw_triangle"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_triangle" />
+
+        <Button
             android:id="@+id/basic_draw_text"
             style="@style/button_style_white_bg"
             android:text="@string/basic_draw_text" />

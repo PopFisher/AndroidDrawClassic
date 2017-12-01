@@ -36,6 +36,7 @@
         <activity android:name=".canvasdraw.rect.DrawRectActivity" />
         <activity android:name=".canvasdraw.roundrect.DrawRoundRectActivity" />
         <activity android:name=".canvasdraw.text.DrawTextActivity" />
+        <activity android:name=".canvasdraw.triangle.DrawTriangleActivity" />
     </application>
 
 </manifest>
