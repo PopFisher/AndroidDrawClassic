@@ -21,6 +21,26 @@
             android:text="@string/basic_draw_path" />
 
         <Button
+            android:id="@+id/basic_draw_circle"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_circle" />
+
+        <Button
+            android:id="@+id/basic_draw_oval"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_oval" />
+
+        <Button
+            android:id="@+id/basic_draw_rect"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_rect" />
+
+         <Button
+            android:id="@+id/basic_draw_rount_rect"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_round_rect" />
+
+        <Button
             android:id="@+id/basic_draw_triangle"
             style="@style/button_style_white_bg"
             android:text="@string/basic_draw_triangle" />
@@ -29,5 +49,20 @@
             android:id="@+id/basic_draw_text"
             style="@style/button_style_white_bg"
             android:text="@string/basic_draw_text" />
+
+        <Button
+            android:id="@+id/basic_draw_picture"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_picture" />
+
+        <Button
+            android:id="@+id/basic_draw_bitmap"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_bitmap" />
+
+        <Button
+            android:id="@+id/basic_draw_gradient"
+            style="@style/button_style_white_bg"
+            android:text="@string/basic_draw_gradient" />
     </LinearLayout>
 </ScrollView>

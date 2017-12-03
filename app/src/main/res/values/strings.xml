@@ -11,4 +11,11 @@
     <string name="basic_draw_text">绘制文本</string>
     <string name="basic_draw_path">绘制路径</string>
     <string name="basic_draw_triangle">绘制三角形</string>
+    <string name="basic_draw_circle">绘制圆</string>
+    <string name="basic_draw_oval">绘制椭圆</string>
+    <string name="basic_draw_rect">绘制矩形</string>
+    <string name="basic_draw_round_rect">绘制圆角矩形</string>
+    <string name="basic_draw_picture">绘制文理</string>
+    <string name="basic_draw_bitmap">绘制Bitmap</string>
+    <string name="basic_draw_gradient">绘制渐变</string>
 </resources>
