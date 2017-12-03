@@ -18,10 +18,10 @@ public class DrawPathView extends View {
     private Path mPath;
     private float mPhase;
 
-    private float mLineStrokeSize = 10;         // 线边框大小
-    private float mDashLineStrokeSize = 10;     // 虚线边框大小
-    private float mDashLineLength = 20;         // 一小段虚线的长度
-    private float mDashWidth = 20;              // 虚线中间间隔的长度
+    private float mLineStrokeSize       = 10;         // 线边框大小
+    private float mDashLineStrokeSize   = 10;     // 虚线边框大小
+    private float mDashLineLength       = 20;         // 一小段虚线的长度
+    private float mDashWidth            = 20;              // 虚线中间间隔的长度
 
     public DrawPathView(Context context, AttributeSet attrs) {
         super(context, attrs);

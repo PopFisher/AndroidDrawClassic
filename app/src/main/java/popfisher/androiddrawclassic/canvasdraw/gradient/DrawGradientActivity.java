@@ -11,7 +11,7 @@ public class DrawGradientActivity extends Activity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_draw_rect);
+        setContentView(R.layout.activity_draw_gradient);
         initView();
     }
 

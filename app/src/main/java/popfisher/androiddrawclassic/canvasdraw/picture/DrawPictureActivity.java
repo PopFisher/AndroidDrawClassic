@@ -11,7 +11,7 @@ public class DrawPictureActivity extends Activity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_draw_path);
+        setContentView(R.layout.activity_draw_picture);
         initView();
     }
 

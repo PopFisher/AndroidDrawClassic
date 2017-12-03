@@ -11,7 +11,7 @@ public class DrawPointActivity extends Activity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_draw_path);
+        setContentView(R.layout.activity_draw_point);
         initView();
     }
 
